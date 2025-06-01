@@ -1,31 +1,602 @@
-<html>
-    <body>
-        <main>
-            <h1>Клуб регби для начинающих</h1>
-            <p class="gallery"><img src="https://learn.algoritmika.org/uploads/2021/01/quarterback-73614_1920_0_1610564244.png" width="200px"/><img src="https://learn.algoritmika.org/uploads/2021/01/hockey-2330582_1920_0_1610564351.jpg" width="250px"/><img src="https://learn.algoritmika.org/uploads/2021/01/rugby-34152_1280_0_1610564450.png" width="250px"/></p>
-            <h2>Снаряжение:</h2>
-            <ul>
-                <li>мяч для регби</li>
-                <li>майка и шорты</li>
-                <li>шипованные бутсы</li>
-                <li>защитное снаряжение</li>
-            </ul>
-            <h2>Стандартные положения<br/> и комбинации:</h2>
-            <ul>
-                <li>схватка</li>
-             <li>мол</li>
-                <li>рак</li>
-                <ul>аут и коридор</li>
-                <li>метка</li>
-                <li>захват</li>
-                <li>свободный удар</li>
-                <li>штрафной удар</li>
-            </ul>
-        </main>
-        <footer>
-            <a href="https://www.facebook.com"><img src="https://learn.algoritmika.org/uploads/2021/01/icon-set-1142000_1280%201_0_1610567897.svg"/></a>
-            <a href="https://twitter.com"><img src="https://learn.algoritmika.org/uploads/2021/01/icon-set-1142000_1280%202_0_1610567897.svg"/></a>
-        </footer>
-    </body>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Universe - Мир безграничных возможностей</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Общие стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background: rgba(0, 30, 60, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: #00a2ff;
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            background: linear-gradient(to right, #00a2ff, #00ffcc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 162, 255, 0.3);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        
+        nav a:hover {
+            background: rgba(0, 162, 255, 0.2);
+            color: #00ffcc;
+        }
+        
+        /* Герой-секция */
+        .hero {
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/1920x1080/001f3f/ffffff?text=ROBLOX+HERO') center/cover no-repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 650px;
+            padding: 30px;
+            background: rgba(0, 20, 40, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #00a2ff;
+            text-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to right, #00a2ff, #00ffcc);
+            color: #001a33;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 162, 255, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 162, 255, 0.6);
+        }
+        
+        /* Секции */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            background: linear-gradient(to right, #00a2ff, #00ffcc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #00a2ff, #00ffcc);
+            border-radius: 2px;
+        }
+        
+        /* О Roblox */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #00ffcc;
+        }
+        
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            height: 400px;
+            background: url('https://via.placeholder.com/600x400/003366/ffffff?text=ROBLOX+ABOUT') center/cover no-repeat;
+        }
+        
+        /* Галерея */
+        .gallery {
+            background: rgba(0, 20, 40, 0.5);
+            padding: 80px 0;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .overlay {
+            transform: translateY(0);
+        }
+        
+        /* Популярные игры */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .game-card {
+            background: rgba(0, 40, 80, 0.5);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .game-image {
+            height: 200px;
+            background-color: #003366;
+        }
+        
+        .game-info {
+            padding: 20px;
+        }
+        
+        .game-info h3 {
+            color: #00a2ff;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Подвал сайта */
+        footer {
+            background: rgba(0, 10, 20, 0.9);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #00ffcc;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #a0a0a0;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: #00a2ff;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 162, 255, 0.2);
+            border-radius: 50%;
+            color: #00a2ff;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: #00a2ff;
+            color: #001a33;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(100, 100, 100, 0.2);
+            color: #707070;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 80px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>Roblox Universe</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О Roblox</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#games">Популярные игры</a></li>
+                        <li><a href="#community">Сообщество</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Добро пожаловать во вселенную Roblox!</h2>
+                <p>Исследуй бесконечные миры, создавай свои собственные игры и присоединяйся к миллионам игроков по всему миру. Воплоти свои самые смелые идеи в жизнь!</p>
+                <a href="https://www.roblox.com/" class="btn" target="_blank">Начать играть</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О Roblox -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Что такое Roblox?</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Платформа для творчества</h3>
+                    <p>Roblox — это огромная онлайн-платформа и магазин игр, где пользователи могут играть в игры, созданные другими пользователями, а также создавать и распространять свои собственные игры.</p>
+                    <p>Платформа предоставляет инструменты для создания 3D-игр в виртуальной вселенной. Игроки могут покупать, продавать и создавать виртуальные предметы, которые можно использовать для украшения своего персонажа.</p>
+                    <p>С помощью Roblox Studio пользователи могут создавать игры, используя язык программирования Lua. Это делает Roblox не только игровой платформой, но и образовательным инструментом.</p>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея изображений -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Галерея Roblox</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- Место для ваших изображений -->
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+1" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Adopt Me!</h3>
+                        <p>Самая популярная игра в Roblox</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+2" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Brookhaven RP</h3>
+                        <p>Ролевая игра с открытым миром</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+3" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Arsenal</h3>
+                        <p>Динамичный шутер от первого лица</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+4" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Tower of Hell</h3>
+                        <p>Испытай свои навыки паркура</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+5" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Jailbreak</h3>
+                        <p>Побег из тюрьмы или охрана порядка</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/600x400/003366/ffffff?text=Roblox+Image+6" alt="Roblox Screenshot">
+                    <div class="overlay">
+                        <h3>Royale High</h3>
+                        <p>Волшебный мир для ролевых игр</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные игры -->
+    <section id="games">
+        <div class="container">
+            <div class="section-title">
+                <h2>Популярные игры</h2>
+            </div>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image" style="background: url('https://via.placeholder.com/600x400/003366/ffffff?text=Adopt+Me') center/cover no-repeat;"></div>
+                    <div class="game-info">
+                        <h3>Adopt Me!</h3>
+                        <p>Заводи питомцев, украшай дом и исследуй удивительный мир вместе с друзьями.</p>
+                        <p>👥 500K+ игроков онлайн</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image" style="background: url('https://via.placeholder.com/600x400/003366/ffffff?text=Brookhaven') center/cover no-repeat;"></div>
+                    <div class="game-info">
+                        <h3>Brookhaven RP</h3>
+                        <p>Живи своей виртуальной жизнью в этом популярном мире ролевых игр.</p>
+                        <p>👥 400K+ игроков онлайн</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image" style="background: url('https://via.placeholder.com/600x400/003366/ffffff?text=Tower+of+Hell') center/cover no-repeat;"></div>
+                    <div class="game-info">
+                        <h3>Tower of Hell</h3>
+                        <p>Преодолей сложнейшие испытания и доберись до вершины башни.</p>
+                        <p>👥 300K+ игроков онлайн</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer id="community">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Roblox Universe</h3>
+                    <p>Ваш гид по вселенной Roblox. Новости, обзоры игр, советы по созданию игр и многое другое.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Полезные ссылки</h3>
+                    <a href="https://www.roblox.com/create">Roblox Studio</a>
+                    <a href="https://developer.roblox.com/">Документация</a>
+                    <a href="https://en.help.roblox.com/">Поддержка</a>
+                    <a href="https://www.roblox.com/upgrades/robux">Купить Robux</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Популярные игры</h3>
+                    <a href="#">Adopt Me!</a>
+                    <a href="#">Brookhaven RP</a>
+                    <a href="#">Jailbreak</a>
+                    <a href="#">Royale High</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-envelope"></i> info@robloxuniverse.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Виртуальный мир Roblox</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Roblox Universe. Этот сайт не аффилирован с Roblox Corporation.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Анимация при прокрутке
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+</body>
 </html>
 
